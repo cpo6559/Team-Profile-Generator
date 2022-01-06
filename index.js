@@ -1,39 +1,31 @@
-The first class is an `Employee` parent class with the following properties and methods:
+var inquirer = require('inquirer');
+const fs = require('fs');
 
-* `name`
+    const questions = [
+        {
+            type: "input",
+            message: "What's your email?",
+            name: "email"
+        },
+        {
+            type: "list",
+            message: "Which best describes your role? ",
+            name: "role",
+            choices: [
+                "Manager",
+                "Employee", 
+                "Engineer", 
+                "Intern" 
+            ]
+        }]
 
-* `id`
+        questions()
+//         },
+//         if ("Manager")
+//             prompt
+            
+// //     /* Pass your questions in here */
 
-* `email`
-
-* `getName()`
-
-* `getId()`
-
-* `getEmail()`
-
-* `getRole()`&mdash;returns `'Employee'`
-
-The other three classes will extend `Employee`.
-
-In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-
-* `officeNumber`
-
-* `getRole()`&mdash;overridden to return `'Manager'`
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-
-* `github`&mdash;GitHub username
-
-* `getGithub()`
-
-* `getRole()`&mdash;overridden to return `'Engineer'`
-
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`&mdash;overridden to return `'Intern'`
+// //   .then((answers) => {
+// //     // Use user feedback for... whatever!!
+// //   })
