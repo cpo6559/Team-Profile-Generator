@@ -1,18 +1,18 @@
 
-* `name`
+// * `name`
 
-* `id`
+// * `id`
 
-* `email`
+// * `email`
 
-* `getName()`
+// * `getName()`
 
-* `getId()`
+// * `getId()`
 
-* `getEmail()`
+// * `getEmail()`
 
-* `getRole()`&mdash;returns `'Employee'`
+// * `getRole()`&mdash;returns `'Employee'`
 
-* `officeNumber`
+// * `officeNumber`
 
-* `getRole()`&mdash;overridden to return `'Manager'`
+// * `getRole()`&mdash;overridden to return `'Manager'`
