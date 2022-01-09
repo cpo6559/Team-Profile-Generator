@@ -1,18 +1,14 @@
+const { extend } = require("./individualcontributors");
+class Manager extends Employee {
+    constructor(name, id, email, officeNumber) {
+super(name,id,email);
+this.officeNumber = officeNumber;
+    }
+    getofficeNumber() {
+        return this.officeNumber;
+    }
 
-// * `name`
-
-// * `id`
-
-// * `email`
-
-// * `getName()`
-
-// * `getId()`
-
-// * `getEmail()`
-
-// * `getRole()`&mdash;returns `'Employee'`
-
-// * `officeNumber`
-
-// * `getRole()`&mdash;overridden to return `'Manager'`
+getRole(){
+    return "Manager";
+}
+}

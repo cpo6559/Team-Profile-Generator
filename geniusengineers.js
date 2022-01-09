@@ -1,19 +1,15 @@
-// * `name`
+const { extend } = require("./individualcontributors");
+class Engineer extends Employee {
+    constructor(name, id, email, github) {
+super(name,id,email);
+this.github = github;
+    }
+    getgithub() {
+        return this.github;
+    }
 
-// * `id`
-
-// * `email`
-
-// * `getName()`
-
-// * `getId()`
-
-// * `getEmail()`
-
-// * `getRole()`&mdash;returns `'Employee'` 
-
-// `github`&mdash;GitHub username
-
-// * `getGithub()`
-
-// * `getRole()`&mdash;overridden to return `'Engineer'`
+getRole(){
+    return "Engineer";
+}
+}
+   
