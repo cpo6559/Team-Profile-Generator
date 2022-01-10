@@ -1,4 +1,4 @@
-const { extend } = require("./individualcontributors");
+const Employee = require("./individualcontributors");
 class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
 super(name,id,email);
@@ -12,3 +12,4 @@ getRole(){
     return "Manager";
 }
 }
+module.exports = Manager;
