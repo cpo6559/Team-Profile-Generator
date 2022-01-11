@@ -4,12 +4,12 @@
 This is an app to generate an HTML page team profile based on user input. This would be helpful for someone in charge of the start up.
 
 # Table of Contents
-Installation
-User Story
-License
-Contributing
-Tests
-Questions
+* [Installation](#installation)
+  * [User Story](#userstory)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
 
 # Installation
 The user should clone the repository from GitHub and be sure to download Node.
