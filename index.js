@@ -4,10 +4,13 @@ const  Employee = require('./individualcontributors');
 const Manager = require('./bigboss');
 const Engineer = require('./geniusengineers');
 const Intern = require('./internlife');
-
-// const { generateHTML } = require('./utils/generateHTML');
+// const { generateHTML } = require('./generateHTML');
 console.log("Section 1")
-    const questions = [
+   
+const employeesArray = []
+
+
+const questions = [
       
    {
             type: "list",
@@ -65,25 +68,61 @@ function startWorking(){
             inquirer.prompt(managerquestions).then((manageranswers)=>{
             let officeNumber = manageranswers.officeNumber
             let manager = new Manager(name,id,email,officeNumber)})
+            employeesArray.push(Manager)
+console.log(employee)
         }else if(answers.role==="Engineer"){
     inquirer.prompt(engineerquestions)
     let github = answers.github
     let engineer = new Engineer(name,id,email,github)
+    employeesArray.push(Engineer)
+
 } else if(answers.role==="Intern"){
     inquirer.prompt(internquestions)
     let school = answers.school    
     let intern = new Intern (name,id,email,school)
+    employeesArray.push(Intern)
+
 }
 })}          
-startWorking()
-//     type: "list",
-//     message: "Would you like to add more team members?",
-//     choices: [
-//         "yes",
-//         "no"
-//     ],
-//     name: "moreMembers"}],
 // startWorking()
+   const employeequestion = [{
+       type: "list",
+       name: "moreMembers",      
+        message: "Would you like to add more team members?",
+    choices: [
+        "Yes, a Manager",
+        "Yes, an Engineer",
+        "Yes, an Intern",
+        "No, thank you. I'm done building my team."
+    ],
+    //   
+    }],
+function addMembers(){
+    inquirer.prompt(employeequestion)
+    .then((data) => {
+        switch (data.moreMembers){
+            case "Yes, a Manager":
+            inquirer.prompt(managerquestions)
+            addMembers()
+            break;
+
+            case "Yes, an Engineer":
+            inquirer.prompt(engineerquestions)
+            addMembers()
+            break; 
+
+            case "Yes, an Intern":
+            inquirer.prompt(internquestions)
+            addMembers()
+            break;
+
+            // case "No, thank you. I'm done building my team.":
+            //     writeToFile()
+            //     break;
+        }
+    })
+
+}
 
 
         // questions()  Note you cannnot call an array. Only a function.
@@ -96,14 +135,17 @@ startWorking()
 // //   .then((answers) => {
 // //     // Use user feedback for... whatever!!
 // //   })
-function writeToFile(data) {
-    fs.writeFile("index.html", data, 
-    (err) => err ? console.error(err) : console.log("index.html has been generated."))
-}
-writeToFile()
-// async function init() {
-//     // await handleEmployee();
-//     writeToFile(generateHTML(managersArr,engineersArr,internsArr));
+// generateHTML([new Manager("bob", "3143", "bob@g.com","10")])
+// function writeToFile(data) {
+//     fs.writeFile("index.html", data, 
+//     (err) => err ? console.error(err) : console.log("index.html has been generated."))
 // }
-// init();
+// writeToFile()
+
+function init() {
+startWorking()
+addMembers()
+    // writeToFile(generateHTML(manager,engineer,intern));
+}
+init();
     
