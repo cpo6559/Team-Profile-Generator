@@ -4,7 +4,7 @@
 This is an app to generate an HTML page team profile based on user input. This would be helpful for someone in charge of the start up.
 
 # Table of Contents
-* [Installation](#installation)
+  * [Installation](#installation)
   * [User Story](#userstory)
   * [License](#license)
   * [Contributing](#contributing)
