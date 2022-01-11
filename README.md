@@ -10,8 +10,9 @@ License
 Contributing
 Tests
 Questions
-Installation
-The user should clone the repository from GitHub and download Node. This application also requires a file system and inquirer module. If testing is required, this application uses Jest.
+
+# Installation
+The user should clone the repository from GitHub and be sure to download Node.
 
 ## User Story
 AS A manager
