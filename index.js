@@ -4,7 +4,7 @@ const  Employee = require('./individualcontributors');
 const Manager = require('./bigboss');
 const Engineer = require('./geniusengineers');
 const Intern = require('./internlife');
-// const { generateHTML } = require('./generateHTML');
+const generateHTML  = require('./generateHTML');
 console.log("Section 1")
    
 const employeesArray = []
@@ -84,7 +84,7 @@ console.log(employee)
 
 }
 })}          
-// startWorking()
+
    const employeequestion = [{
        type: "list",
        name: "moreMembers",      
@@ -96,7 +96,8 @@ console.log(employee)
         "No, thank you. I'm done building my team."
     ],
     //   
-    }],
+    }];
+
 function addMembers(){
     inquirer.prompt(employeequestion)
     .then((data) => {
@@ -116,9 +117,9 @@ function addMembers(){
             addMembers()
             break;
 
-            // case "No, thank you. I'm done building my team.":
-            //     writeToFile()
-            //     break;
+            case "No, thank you. I'm done building my team.":
+                writeToFile()
+                break;
         }
     })
 
@@ -135,16 +136,19 @@ function addMembers(){
 // //   .then((answers) => {
 // //     // Use user feedback for... whatever!!
 // //   })
-// generateHTML([new Manager("bob", "3143", "bob@g.com","10")])
-// function writeToFile(data) {
-//     fs.writeFile("index.html", data, 
-//     (err) => err ? console.error(err) : console.log("index.html has been generated."))
-// }
-// writeToFile()
+const testData = generateHTML([new Manager("bob", "3143", "bob@g.com","10")])
 
-function init() {
-startWorking()
-addMembers()
+function writeToFile(data) {
+    fs.writeFile("index1.html", data, 
+    (err) => err ? console.error(err) : console.log("index.html has been generated."))
+}
+writeToFile(testData);
+
+ function init() {
+ startWorking().then(function(){
+     addMembers()
+ })
+
     // writeToFile(generateHTML(manager,engineer,intern));
 }
 init();
